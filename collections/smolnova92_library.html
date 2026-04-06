@@ -6,10 +6,7 @@
   <title>smolnova92 - Library Archive</title>
   <style>
     * { box-sizing: border-box; }
-    body { margin: 0; font-family: Georgia, 'Times New Roman', serif; background:
-      radial-gradient(circle at top, rgba(255,214,153,0.08), transparent 28%),
-      linear-gradient(180deg, #120d08 0%, #1b140f 40%, #120d08 100%);
-      color: #f6ead7; padding: 28px; }
+    body { margin: 0; font-family: Georgia, 'Times New Roman', serif; background: radial-gradient(circle at top, rgba(255,214,153,0.08), transparent 28%), linear-gradient(180deg, #120d08 0%, #1b140f 40%, #120d08 100%); color: #f6ead7; padding: 28px; }
     .wrapper { max-width: 1600px; margin: 0 auto; }
     .header { background: rgba(255,248,235,0.05); border: 1px solid rgba(255,235,210,0.08); border-radius: 24px; padding: 28px; margin-bottom: 30px; box-shadow: 0 18px 40px rgba(0,0,0,0.35); }
     .title { font-size: 46px; font-weight: 900; margin-bottom: 10px; color: #ffe7bd; }
@@ -17,89 +14,31 @@
     .stats { font-size: 16px; color: rgba(255,237,214,0.9); }
     .home-link { display: inline-block; margin-top: 14px; color: #f5c77f; text-decoration: none; font-weight: bold; }
     .home-link:hover { text-decoration: underline; }
-    .shelf-block { margin-bottom: 34px; }
-    .shelf-head { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-bottom: 10px; }
+    .shelf-block { margin-bottom: 36px; }
+    .shelf-head { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-bottom: 12px; }
     .shelf-title { font-size: 30px; font-weight: 900; color: #ffdca4; }
     .shelf-progress { font-size: 15px; color: rgba(255,236,210,0.75); }
-    .shelf-frame {
-      background: linear-gradient(180deg, #5a3922 0%, #3f2718 100%);
-      border: 10px solid #6b4529;
-      border-bottom-width: 16px;
-      border-radius: 18px;
-      padding: 18px 16px 24px 16px;
-      box-shadow: inset 0 3px 0 rgba(255,220,170,0.08), 0 18px 34px rgba(0,0,0,0.34);
-      position: relative;
-    }
-    .shelf-frame::after {
-      content: '';
-      position: absolute;
-      left: 0; right: 0; bottom: -8px;
-      height: 12px;
-      background: linear-gradient(180deg, #2b1a10 0%, #120b07 100%);
-      border-radius: 0 0 12px 12px;
-    }
-    .spine-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(72px, 1fr));
-      gap: 10px;
-      align-items: end;
-      min-height: 250px;
-    }
-    .spine {
-      height: 220px;
-      border-radius: 8px 8px 4px 4px;
-      border: 2px solid rgba(0,0,0,0.35);
-      box-shadow: inset 2px 0 0 rgba(255,255,255,0.08), inset -2px 0 0 rgba(0,0,0,0.18), 0 10px 16px rgba(0,0,0,0.22);
-      position: relative;
-      overflow: hidden;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-decoration: none;
-    }
-    .spine:hover { transform: translateY(-4px); }
-    .spine.owned.horror   { background: linear-gradient(180deg, #5e0f17 0%, #8a1f23 100%); }
-    .spine.owned.fantasy  { background: linear-gradient(180deg, #274a22 0%, #3f6c35 100%); }
-    .spine.owned.romance  { background: linear-gradient(180deg, #7a214c 0%, #a93871 100%); }
-    .spine.owned.scifi    { background: linear-gradient(180deg, #173c68 0%, #285f98 100%); }
-    .spine.owned.mystery  { background: linear-gradient(180deg, #4a3c14 0%, #7a661f 100%); }
-    .spine.owned.default  { background: linear-gradient(180deg, #4b2d22 0%, #7a4e39 100%); }
-    .spine.unowned {
-      background: linear-gradient(180deg, #2a211c 0%, #1a1411 100%);
-      border-color: rgba(255,235,210,0.10);
-      opacity: 0.75;
-    }
-    .spine::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 10px; bottom: 0;
-      width: 2px;
-      background: rgba(255,255,255,0.15);
-    }
-    .spine::after {
-      content: '';
-      position: absolute;
-      left: 0; right: 0; top: 18px;
-      height: 18px;
-      background: rgba(255,240,220,0.12);
-      box-shadow: 0 1px 0 rgba(0,0,0,0.2), 0 24px 0 rgba(255,240,220,0.08), 0 48px 0 rgba(255,240,220,0.06);
-    }
-    .spine-text {
-      writing-mode: vertical-rl;
-      transform: rotate(180deg);
-      color: #fff5e8;
-      font-size: 13px;
-      font-weight: 700;
-      letter-spacing: 0.4px;
-      line-height: 1.1;
-      text-align: center;
-      z-index: 2;
-      max-height: 185px;
-      overflow: hidden;
-      padding: 10px 0;
-    }
-    .spine.unowned .spine-text { color: rgba(255,235,210,0.42); }
-    .tooltip { display: none; }
+    .shelf-frame { background: linear-gradient(180deg, #5a3922 0%, #3f2718 100%); border: 10px solid #6b4529; border-bottom-width: 16px; border-radius: 18px; padding: 20px 16px 26px 16px; box-shadow: inset 0 3px 0 rgba(255,220,170,0.08), 0 18px 34px rgba(0,0,0,0.34); position: relative; }
+    .shelf-frame::after { content: ''; position: absolute; left: 0; right: 0; bottom: -8px; height: 12px; background: linear-gradient(180deg, #2b1a10 0%, #120b07 100%); border-radius: 0 0 12px 12px; }
+    .book-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 18px; }
+    .book { border-radius: 16px 16px 10px 10px; padding: 18px; min-height: 220px; background: linear-gradient(180deg, #3a2617 0%, #24180f 100%); border: 2px solid #7b5b3d; box-shadow: inset 0 1px 0 rgba(255,240,220,0.08), 0 10px 24px rgba(0,0,0,0.28); transition: transform 0.18s ease, box-shadow 0.18s ease; position: relative; overflow: hidden; }
+    .book:hover { transform: translateY(-4px); box-shadow: inset 0 1px 0 rgba(255,240,220,0.08), 0 18px 34px rgba(0,0,0,0.38); }
+    .book::before { content: ''; position: absolute; top: 0; left: 14px; bottom: 0; width: 2px; background: rgba(255,240,220,0.12); }
+    .book::after { content: ''; position: absolute; left: 0; right: 0; top: 20px; height: 16px; background: rgba(255,240,220,0.08); box-shadow: 0 26px 0 rgba(255,240,220,0.05), 0 52px 0 rgba(255,240,220,0.04); }
+    .book.owned.horror  { background: linear-gradient(180deg, #4a161c 0%, #2b0e12 100%); border-color: #8f3d41; }
+    .book.owned.fantasy { background: linear-gradient(180deg, #234325 0%, #162817 100%); border-color: #4d7a4a; }
+    .book.owned.romance { background: linear-gradient(180deg, #6a2043 0%, #3e1227 100%); border-color: #a05277; }
+    .book.owned.scifi   { background: linear-gradient(180deg, #183a63 0%, #10253e 100%); border-color: #4d79a3; }
+    .book.owned.mystery { background: linear-gradient(180deg, #5c4b18 0%, #332a0d 100%); border-color: #9a8231; }
+    .book.unowned { background: linear-gradient(180deg, #201915 0%, #15110e 100%); border-color: #4e4037; opacity: 0.9; }
+    .status { display: inline-block; font-size: 12px; font-weight: 900; letter-spacing: 1px; text-transform: uppercase; border-radius: 999px; padding: 6px 10px; margin-bottom: 14px; position: relative; z-index: 1; }
+    .status.owned { background: rgba(133, 201, 116, 0.16); color: #b8f0ac; border: 1px solid rgba(133, 201, 116, 0.35); }
+    .status.unowned { background: rgba(180,180,180,0.08); color: #bcae9d; border: 1px solid rgba(180,180,180,0.18); }
+    .book-title { font-size: 24px; font-weight: 900; line-height: 1.1; margin-bottom: 10px; position: relative; z-index: 1; }
+    .book-title a { color: #fff1d3; text-decoration: none; }
+    .book-title a:hover { text-decoration: underline; }
+    .author { font-size: 16px; color: rgba(255,232,204,0.86); margin-bottom: 16px; position: relative; z-index: 1; }
+    .genre-tag { display: inline-block; font-size: 13px; font-weight: 700; border-radius: 999px; padding: 6px 10px; background: rgba(255,220,160,0.08); color: #f0cc92; border: 1px solid rgba(255,220,160,0.16); position: relative; z-index: 1; }
     .footer-note { margin-top: 30px; color: rgba(255,232,204,0.62); font-size: 14px; }
   </style>
 </head>
@@ -117,36 +56,66 @@
         <div class="shelf-progress">0 / 10 collected</div>
       </div>
       <div class="shelf-frame">
-        <div class="spine-grid">
-          <div class="spine unowned" title="Coraline by Neil Gaiman">
-            <div class="spine-text">Coraline</div>
+        <div class="book-grid">
+          <div class="book unowned">
+            <div class="status unowned">Missing</div>
+            <div class="book-title">Coraline</div>
+            <div class="author">by Neil Gaiman</div>
+            <div class="genre-tag">Horror</div>
           </div>
-          <div class="spine unowned" title="Dark Harvest by Norman Patridge">
-            <div class="spine-text">Dark Harvest</div>
+          <div class="book unowned">
+            <div class="status unowned">Missing</div>
+            <div class="book-title">Dark Harvest</div>
+            <div class="author">by Norman Patridge</div>
+            <div class="genre-tag">Horror</div>
           </div>
-          <div class="spine unowned" title="Frankenstein by Mary Shelley">
-            <div class="spine-text">Frankenstein</div>
+          <div class="book unowned">
+            <div class="status unowned">Missing</div>
+            <div class="book-title">Frankenstein</div>
+            <div class="author">by Mary Shelley</div>
+            <div class="genre-tag">Horror</div>
           </div>
-          <div class="spine unowned" title="House of Leaves by Mark Danielewski">
-            <div class="spine-text">House of Leaves</div>
+          <div class="book unowned">
+            <div class="status unowned">Missing</div>
+            <div class="book-title">House of Leaves</div>
+            <div class="author">by Mark Danielewski</div>
+            <div class="genre-tag">Horror</div>
           </div>
-          <div class="spine unowned" title="Odd Thomas by Dean Koontz">
-            <div class="spine-text">Odd Thomas</div>
+          <div class="book unowned">
+            <div class="status unowned">Missing</div>
+            <div class="book-title">Odd Thomas</div>
+            <div class="author">by Dean Koontz</div>
+            <div class="genre-tag">Horror</div>
           </div>
-          <div class="spine unowned" title="Pet Sematary by Stephen King">
-            <div class="spine-text">Pet Sematary</div>
+          <div class="book unowned">
+            <div class="status unowned">Missing</div>
+            <div class="book-title">Pet Sematary</div>
+            <div class="author">by Stephen King</div>
+            <div class="genre-tag">Horror</div>
           </div>
-          <div class="spine unowned" title="The Green Ribbon by Alvin Schwartz">
-            <div class="spine-text">The Green Ribbon</div>
+          <div class="book unowned">
+            <div class="status unowned">Missing</div>
+            <div class="book-title">The Green Ribbon</div>
+            <div class="author">by Alvin Schwartz</div>
+            <div class="genre-tag">Horror</div>
           </div>
-          <div class="spine unowned" title="The Last Days of Jack Sparks by Jason Arnopp">
-            <div class="spine-text">The Last Days of Jack Sparks</div>
+          <div class="book unowned">
+            <div class="status unowned">Missing</div>
+            <div class="book-title">The Last Days of Jack Sparks</div>
+            <div class="author">by Jason Arnopp</div>
+            <div class="genre-tag">Horror</div>
           </div>
-          <div class="spine unowned" title="The Taking by Dean Koontz">
-            <div class="spine-text">The Taking</div>
+          <div class="book unowned">
+            <div class="status unowned">Missing</div>
+            <div class="book-title">The Taking</div>
+            <div class="author">by Dean Koontz</div>
+            <div class="genre-tag">Horror</div>
           </div>
-          <div class="spine unowned" title="World War Z by Max Brooks">
-            <div class="spine-text">World War Z</div>
+          <div class="book unowned">
+            <div class="status unowned">Missing</div>
+            <div class="book-title">World War Z</div>
+            <div class="author">by Max Brooks</div>
+            <div class="genre-tag">Horror</div>
           </div>
         </div>
       </div>
@@ -157,21 +126,36 @@
         <div class="shelf-progress">0 / 5 collected</div>
       </div>
       <div class="shelf-frame">
-        <div class="spine-grid">
-          <div class="spine unowned" title="A Song of Ice and Fire by George R. R. Martin">
-            <div class="spine-text">A Song of Ice and Fire</div>
+        <div class="book-grid">
+          <div class="book unowned">
+            <div class="status unowned">Missing</div>
+            <div class="book-title">A Song of Ice and Fire</div>
+            <div class="author">by George R. R. Martin</div>
+            <div class="genre-tag">Fantasy</div>
           </div>
-          <div class="spine unowned" title="Eragon by Christopher Paolini">
-            <div class="spine-text">Eragon</div>
+          <div class="book unowned">
+            <div class="status unowned">Missing</div>
+            <div class="book-title">Eragon</div>
+            <div class="author">by Christopher Paolini</div>
+            <div class="genre-tag">Fantasy</div>
           </div>
-          <div class="spine unowned" title="Ranger&#39;s Apprentice by John Flanagan">
-            <div class="spine-text">Ranger's Apprentice</div>
+          <div class="book unowned">
+            <div class="status unowned">Missing</div>
+            <div class="book-title">Ranger's Apprentice</div>
+            <div class="author">by John Flanagan</div>
+            <div class="genre-tag">Fantasy</div>
           </div>
-          <div class="spine unowned" title="The Hobbit by J. R. R. Tolkien">
-            <div class="spine-text">The Hobbit</div>
+          <div class="book unowned">
+            <div class="status unowned">Missing</div>
+            <div class="book-title">The Hobbit</div>
+            <div class="author">by J. R. R. Tolkien</div>
+            <div class="genre-tag">Fantasy</div>
           </div>
-          <div class="spine unowned" title="Trickster&#39;s Choice by Tamora Pierce">
-            <div class="spine-text">Trickster's Choice</div>
+          <div class="book unowned">
+            <div class="status unowned">Missing</div>
+            <div class="book-title">Trickster's Choice</div>
+            <div class="author">by Tamora Pierce</div>
+            <div class="genre-tag">Fantasy</div>
           </div>
         </div>
       </div>
@@ -182,21 +166,36 @@
         <div class="shelf-progress">0 / 5 collected</div>
       </div>
       <div class="shelf-frame">
-        <div class="spine-grid">
-          <div class="spine unowned" title="A Court of Thorns and Roses by Sarah J Maas">
-            <div class="spine-text">A Court of Thorns and Roses</div>
+        <div class="book-grid">
+          <div class="book unowned">
+            <div class="status unowned">Missing</div>
+            <div class="book-title">A Court of Thorns and Roses</div>
+            <div class="author">by Sarah J Maas</div>
+            <div class="genre-tag">Romance</div>
           </div>
-          <div class="spine unowned" title="It Ends With Me by Natasha Prosperi">
-            <div class="spine-text">It Ends With Me</div>
+          <div class="book unowned">
+            <div class="status unowned">Missing</div>
+            <div class="book-title">It Ends With Me</div>
+            <div class="author">by Natasha Prosperi</div>
+            <div class="genre-tag">Romance</div>
           </div>
-          <div class="spine unowned" title="Pride and Prejudice by Jane Austen">
-            <div class="spine-text">Pride and Prejudice</div>
+          <div class="book unowned">
+            <div class="status unowned">Missing</div>
+            <div class="book-title">Pride and Prejudice</div>
+            <div class="author">by Jane Austen</div>
+            <div class="genre-tag">Romance</div>
           </div>
-          <div class="spine unowned" title="The Fault in Our Stars by John Green">
-            <div class="spine-text">The Fault in Our Stars</div>
+          <div class="book unowned">
+            <div class="status unowned">Missing</div>
+            <div class="book-title">The Fault in Our Stars</div>
+            <div class="author">by John Green</div>
+            <div class="genre-tag">Romance</div>
           </div>
-          <div class="spine unowned" title="Twisted Love by Ana Huang">
-            <div class="spine-text">Twisted Love</div>
+          <div class="book unowned">
+            <div class="status unowned">Missing</div>
+            <div class="book-title">Twisted Love</div>
+            <div class="author">by Ana Huang</div>
+            <div class="genre-tag">Romance</div>
           </div>
         </div>
       </div>
@@ -207,21 +206,36 @@
         <div class="shelf-progress">0 / 5 collected</div>
       </div>
       <div class="shelf-frame">
-        <div class="spine-grid">
-          <div class="spine unowned" title="Children of Time by Adrian Tchaikovsky">
-            <div class="spine-text">Children of Time</div>
+        <div class="book-grid">
+          <div class="book unowned">
+            <div class="status unowned">Missing</div>
+            <div class="book-title">Children of Time</div>
+            <div class="author">by Adrian Tchaikovsky</div>
+            <div class="genre-tag">Sci-Fi</div>
           </div>
-          <div class="spine unowned" title="Dune by Frank Herbert">
-            <div class="spine-text">Dune</div>
+          <div class="book unowned">
+            <div class="status unowned">Missing</div>
+            <div class="book-title">Dune</div>
+            <div class="author">by Frank Herbert</div>
+            <div class="genre-tag">Sci-Fi</div>
           </div>
-          <div class="spine unowned" title="Infinity Gate by Mike Carey">
-            <div class="spine-text">Infinity Gate</div>
+          <div class="book unowned">
+            <div class="status unowned">Missing</div>
+            <div class="book-title">Infinity Gate</div>
+            <div class="author">by Mike Carey</div>
+            <div class="genre-tag">Sci-Fi</div>
           </div>
-          <div class="spine unowned" title="The Ender&#39;s Game by Orson Scott Card">
-            <div class="spine-text">The Ender's Game</div>
+          <div class="book unowned">
+            <div class="status unowned">Missing</div>
+            <div class="book-title">The Ender's Game</div>
+            <div class="author">by Orson Scott Card</div>
+            <div class="genre-tag">Sci-Fi</div>
           </div>
-          <div class="spine unowned" title="To Sleep in a Sea of Stars by Christopher Paolini">
-            <div class="spine-text">To Sleep in a Sea of Stars</div>
+          <div class="book unowned">
+            <div class="status unowned">Missing</div>
+            <div class="book-title">To Sleep in a Sea of Stars</div>
+            <div class="author">by Christopher Paolini</div>
+            <div class="genre-tag">Sci-Fi</div>
           </div>
         </div>
       </div>
@@ -232,26 +246,41 @@
         <div class="shelf-progress">0 / 5 collected</div>
       </div>
       <div class="shelf-frame">
-        <div class="spine-grid">
-          <div class="spine unowned" title="Icing on the Murder by Valerie Burns">
-            <div class="spine-text">Icing on the Murder</div>
+        <div class="book-grid">
+          <div class="book unowned">
+            <div class="status unowned">Missing</div>
+            <div class="book-title">Icing on the Murder</div>
+            <div class="author">by Valerie Burns</div>
+            <div class="genre-tag">Mystery</div>
           </div>
-          <div class="spine unowned" title="The Housemaid&#39;s Secret by Freida McFadden">
-            <div class="spine-text">The Housemaid's Secret</div>
+          <div class="book unowned">
+            <div class="status unowned">Missing</div>
+            <div class="book-title">The Housemaid's Secret</div>
+            <div class="author">by Freida McFadden</div>
+            <div class="genre-tag">Mystery</div>
           </div>
-          <div class="spine unowned" title="The Last Thing He Told Me by Laura Dave">
-            <div class="spine-text">The Last Thing He Told Me</div>
+          <div class="book unowned">
+            <div class="status unowned">Missing</div>
+            <div class="book-title">The Last Thing He Told Me</div>
+            <div class="author">by Laura Dave</div>
+            <div class="genre-tag">Mystery</div>
           </div>
-          <div class="spine unowned" title="The Maltese Falcon by Samuel Dashiell Hammett">
-            <div class="spine-text">The Maltese Falcon</div>
+          <div class="book unowned">
+            <div class="status unowned">Missing</div>
+            <div class="book-title">The Maltese Falcon</div>
+            <div class="author">by Samuel Dashiell Hammett</div>
+            <div class="genre-tag">Mystery</div>
           </div>
-          <div class="spine unowned" title="The Silent Patient by Alex Michaelides">
-            <div class="spine-text">The Silent Patient</div>
+          <div class="book unowned">
+            <div class="status unowned">Missing</div>
+            <div class="book-title">The Silent Patient</div>
+            <div class="author">by Alex Michaelides</div>
+            <div class="genre-tag">Mystery</div>
           </div>
         </div>
       </div>
     </div>
-    <div class="footer-note">Catalogue generated from genre folders and text filenames. Owned books link to a search page for the title and author.</div>
+    <div class="footer-note">Catalogue generated from genre folders and text filenames. Collected books link to a search page for the title and author.</div>
   </div>
 </body>
 </html>
